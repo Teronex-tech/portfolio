@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="en" dir="ltr">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Zira Assistant — التوثيق التقني</title>
+<title>Zira Assistant — Technical Docs</title>
 <style>
   :root{
     --sky:#00b7eb;
@@ -31,36 +31,37 @@
   .wave2{animation:wave 18s ease-in-out infinite reverse;}
   @keyframes wave{0%,100%{transform:translateX(0)}50%{transform:translateX(-30px)}}
 
+  /* شريط اللغة */
+  .lang-bar{position:fixed;top:18px;left:18px;z-index:50;}
+  .lang-btn{
+    background:var(--glass);border:1px solid rgba(0,183,235,.4);
+    color:var(--sky-light);padding:10px 20px;border-radius:30px;
+    font-size:14px;cursor:pointer;backdrop-filter:blur(8px);
+    box-shadow:0 0 20px rgba(0,183,235,.25);transition:.3s;
+  }
+  .lang-btn:hover{background:var(--sky);color:#04141d;}
+
   header{
-    text-align:center;
-    padding:90px 20px 50px;
-    animation:fadeDown 1s ease both;
+    text-align:center;padding:90px 20px 50px;animation:fadeDown 1s ease both;
   }
   .badge{
     display:inline-flex;align-items:center;gap:10px;
-    background:var(--glass);
-    border:1px solid rgba(0,183,235,.4);
-    padding:8px 20px;border-radius:30px;
-    font-size:14px;color:var(--sky-light);
-    backdrop-filter:blur(8px);
-    box-shadow:0 0 24px rgba(0,183,235,.25);
-    margin-bottom:26px;
+    background:var(--glass);border:1px solid rgba(0,183,235,.4);
+    padding:8px 20px;border-radius:30px;font-size:14px;color:var(--sky-light);
+    backdrop-filter:blur(8px);box-shadow:0 0 24px rgba(0,183,235,.25);margin-bottom:26px;
   }
   .dot{width:10px;height:10px;border-radius:50%;background:var(--sky);box-shadow:0 0 12px var(--sky);animation:pulse 1.6s infinite;}
   @keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(.7)}}
   h1{
     font-size:54px;font-weight:800;
     background:linear-gradient(90deg,var(--sky-light),var(--sky),#fff);
-    -webkit-background-clip:text;background-clip:text;color:transparent;
-    letter-spacing:1px;
+    -webkit-background-clip:text;background-clip:text;color:transparent;letter-spacing:1px;
   }
   .subtitle{font-size:20px;color:var(--text-soft);opacity:.85;margin-top:14px;}
   .glow-orb{
-    width:200px;height:200px;margin:30px auto 0;
-    border-radius:50%;
+    width:200px;height:200px;margin:30px auto 0;border-radius:50%;
     background:radial-gradient(circle at 35% 30%,var(--sky-light),var(--sky) 40%,var(--sky-dark) 70%,transparent 72%);
-    box-shadow:0 0 60px rgba(0,183,235,.6);
-    animation:float 4s ease-in-out infinite;
+    box-shadow:0 0 60px rgba(0,183,235,.6);animation:float 4s ease-in-out infinite;
   }
   @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-18px)}}
   @keyframes fadeDown{from{opacity:0;transform:translateY(-30px)}to{opacity:1;transform:translateY(0)}}
@@ -69,12 +70,8 @@
   @keyframes fadeUp{from{opacity:0;transform:translateY(40px)}to{opacity:1;transform:translateY(0)}}
 
   .card{
-    background:var(--glass);
-    border:1px solid rgba(0,183,235,.25);
-    border-radius:22px;
-    padding:34px;
-    backdrop-filter:blur(10px);
-    box-shadow:0 8px 40px rgba(0,0,0,.35);
+    background:var(--glass);border:1px solid rgba(0,183,235,.25);border-radius:22px;
+    padding:34px;backdrop-filter:blur(10px);box-shadow:0 8px 40px rgba(0,0,0,.35);
     transition:transform .3s ease,box-shadow .3s ease;
   }
   .card:hover{transform:translateY(-6px);box-shadow:0 14px 50px rgba(0,183,235,.25);}
@@ -87,10 +84,8 @@
 
   .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;margin-top:22px;}
   .feature{
-    background:rgba(10,42,58,.7);
-    border:1px solid rgba(0,183,235,.2);
-    border-radius:16px;padding:22px;text-align:center;
-    transition:.3s;
+    background:rgba(10,42,58,.7);border:1px solid rgba(0,183,235,.2);border-radius:16px;
+    padding:22px;text-align:center;transition:.3s;
   }
   .feature:hover{background:rgba(14,53,80,.9);transform:scale(1.04);}
   .feature .ic{font-size:34px;margin-bottom:10px;filter:drop-shadow(0 0 10px var(--sky));}
@@ -100,8 +95,7 @@
   .gui-show{display:flex;justify-content:center;margin:30px 0;}
   .phone{
     width:340px;background:linear-gradient(160deg,var(--bg-panel),#03121b);
-    border:2px solid rgba(0,183,235,.5);
-    border-radius:34px;padding:22px;
+    border:2px solid rgba(0,183,235,.5);border-radius:34px;padding:22px;
     box-shadow:0 0 50px rgba(0,183,235,.4),inset 0 0 30px rgba(0,183,235,.08);
     animation:float 5s ease-in-out infinite;
   }
@@ -112,15 +106,12 @@
     box-shadow:0 0 40px rgba(0,183,235,.6);animation:pulse-orb 2.4s infinite;}
   @keyframes pulse-orb{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(1.08);opacity:.8}}
   .btn-sky{display:block;width:80%;margin:12px auto;padding:14px;border-radius:26px;
-    background:var(--sky);color:#04141d;font-weight:700;text-align:center;font-size:15px;
-    box-shadow:0 0 20px rgba(0,183,235,.5);}
+    background:var(--sky);color:#04141d;font-weight:700;text-align:center;font-size:15px;box-shadow:0 0 20px rgba(0,183,235,.5);}
   .btn-ghost{display:block;width:80%;margin:12px auto;padding:12px;border-radius:22px;
     border:1px solid var(--sky);color:var(--sky-light);text-align:center;font-size:14px;background:rgba(14,53,80,.4);}
 
-  .code{
-    background:#03121b;border:1px solid rgba(0,183,235,.25);border-radius:14px;
-    padding:20px;font-family:"Consolas",monospace;font-size:14px;color:#9fe8ff;overflow-x:auto;
-  }
+  .code{background:#03121b;border:1px solid rgba(0,183,235,.25);border-radius:14px;
+    padding:20px;font-family:"Consolas",monospace;font-size:14px;color:#9fe8ff;overflow-x:auto;}
   .code .k{color:#7fe3ff;}
   .code .s{color:#9affc4;}
   .code .c{color:#5a8aa0;}
@@ -133,9 +124,21 @@
   .img-frame{text-align:center;margin:24px 0;}
   .img-frame img{width:80%;max-width:520px;border-radius:18px;border:1px solid rgba(0,183,235,.4);box-shadow:0 0 40px rgba(0,183,235,.3);}
   .cap{font-size:13px;opacity:.6;margin-top:8px;}
+
+  /* الوضع العربي */
+  body.ar{font-family:"Segoe UI","Tahoma",sans-serif;direction:rtl;}
+  body.ar h2::before{order:2;}
+  body.ar li{padding:8px 28px 8px 0;}
+  body.ar li::before{right:0;left:auto;}
+  body.ar .code{direction:ltr;text-align:left;}
 </style>
 </head>
 <body>
+
+<!-- زر تبديل اللغة (افتراضي إنجليزي) -->
+<div class="lang-bar">
+  <button class="lang-btn" id="langBtn" onclick="toggleLang()">🌐 العربية</button>
+</div>
 
 <!-- خلفية متموجة -->
 <div class="waves">
@@ -146,33 +149,35 @@
 </div>
 
 <header>
-  <div class="badge"><span class="dot"></span> مساعد صوتي ذكي • Python • CustomTkinter</div>
+  <div class="badge"><span class="dot"></span> <span data-en="AI Voice Assistant • Python • CustomTkinter" data-ar="مساعد صوتي ذكي • Python • CustomTkinter">AI Voice Assistant • Python • CustomTkinter</span></div>
   <h1>Zira AI Assistant</h1>
-  <div class="subtitle">توثيق تقني شامل لمشروع المساعد الصوتي بلون السماء</div>
+  <div class="subtitle" data-en="Complete technical documentation for the sky-themed voice assistant"
+       data-ar="توثيق تقني شامل لمساعد صوتي بهوية لون السماء">Complete technical documentation for the sky-themed voice assistant</div>
   <div class="glow-orb"></div>
 </header>
 
 <!-- لقطة GUI -->
 <section>
   <div class="card">
-    <h2>واجهة المستخدم (GUI)</h2>
-    <p>تم بناء الواجهة باستخدام <b>CustomTkinter</b> بهوية بصرية سماوية متناسقة، مع أشكال متوهجة ورسوم متحركة ناعمة للرن، وانتقالات سلسة بين الشاشات عبر تأثير التلاشي (Fade).</p>
+    <h2 data-en="User Interface (GUI)" data-ar="واجهة المستخدم (GUI)">User Interface (GUI)</h2>
+    <p data-en="Built with CustomTkinter in a consistent sky-blue identity, with glowing shapes, smooth animated audio wave, and seamless screen transitions via fade effects."
+       data-ar="تم بناء الواجهة باستخدام CustomTkinter بهوية بصرية سماوية متناسقة، مع أشكال متوهجة ورسوم متحركة ناعمة للرن، وانتقالات سلسة بين الشاشات عبر تأثير التلاشي.">Built with CustomTkinter in a consistent sky-blue identity, with glowing shapes, smooth animated audio wave, and seamless screen transitions via fade effects.</p>
     <div class="gui-show">
       <div class="phone">
         <div class="orb"></div>
         <div class="scr-title">ZIRA</div>
-        <div class="scr-sub">Voice Assistant</div>
-        <div class="btn-sky">🎙 استماع</div>
-        <div class="btn-ghost">خروج</div>
+        <div class="scr-sub" data-en="Voice Assistant" data-ar="المساعد الصوتي">Voice Assistant</div>
+        <div class="btn-sky" data-en="🎙 Listen" data-ar="🎙 استماع">🎙 Listen</div>
+        <div class="btn-ghost" data-en="Exit" data-ar="خروج">Exit</div>
       </div>
     </div>
     <div class="img-frame">
-      <img id="shot1" alt="لقطة المشروع">
-      <div class="cap">شكل الواجهة الحية أثناء التشغيل</div>
+      <img id="shot1" alt="GUI Screenshot">
+      <div class="cap" data-en="Live interface during operation" data-ar="شكل الواجهة الحية أثناء التشغيل">Live interface during operation</div>
     </div>
     <div class="img-frame">
-      <img id="shot2" alt="لقطة المشروع 2">
-      <div class="cap">شاشة الاستماع مع الموجة الصوتية المتحركة</div>
+      <img id="shot2" alt="Listening Screenshot">
+      <div class="cap" data-en="Listening screen with the live audio wave" data-ar="شاشة الاستماع مع الموجة الصوتية المتحركة">Listening screen with the live audio wave</div>
     </div>
   </div>
 </section>
@@ -180,13 +185,52 @@
 <!-- نظرة عامة -->
 <section>
   <div class="card">
-    <h2>نظرة تقنية عامة</h2>
-    <p>المشروع مساعد صوتي يعمل على سطح المكتب، يستمع للأوامر بالإنجليزية عبر الميكروفون، يحللها باستخدام تعبيرات منتظمة، ثم ينفذ إجراءات مثل فتح التطبيقات، التحكم بالنظام، وإنشاء الملفات — مع رد صوتي بصوت Zira.</p>
+    <h2 data-en="Technical Overview" data-ar="نظرة تقنية عامة">Technical Overview</h2>
+    <p data-en="A desktop voice assistant that listens to commands, analyzes them with regex, then executes actions such as launching apps, controlling the system, and managing files — with a spoken Zira voice reply. Now powered by an AI chat model and full Arabic support."
+       data-ar="مساعد صوتي على سطح المكتب يستمع للأوامر، يحللها بتعبيرات منتظمة، ثم ينفذ إجراءات مثل فتح التطبيقات والتحكم بالنظام وإدارة الملفات — مع رد صوتي بصوت زيرة. الآن مدعوم بمودل ذكاء اصطناعي ودعم كامل للعربية.">A desktop voice assistant that listens to commands, analyzes them with regex, then executes actions such as launching apps, controlling the system, and managing files — with a spoken Zira voice reply. Now powered by an AI chat model and full Arabic support.</p>
     <div class="grid">
-      <div class="feature"><div class="ic">🎤</div><h3>التعرف الصوتي</h3><p>Google Speech Recognition</p></div>
-      <div class="feature"><div class="ic">🔊</div><h3>تحويل النص</h3><p>pyttsx3 — صوت Zira</p></div>
-      <div class="feature"><div class="ic">🪟</div><h3>الواجهة</h3><p>CustomTkinter</p></div>
-      <div class="feature"><div class="ic">📊</div><h3>الرسوم</h3><p>Matplotlib المدمج</p></div>
+      <div class="feature"><div class="ic">🎤</div><h3 data-en="Speech Recognition" data-ar="التعرف الصوتي">Speech Recognition</h3><p data-en="Google Speech Recognition" data-ar="Google Speech Recognition">Google Speech Recognition</p></div>
+      <div class="feature"><div class="ic">🔊</div><h3 data-en="Text to Speech" data-ar="تحويل النص">Text to Speech</h3><p data-en="pyttsx3 — Zira voice" data-ar="pyttsx3 — صوت زيرة">pyttsx3 — Zira voice</p></div>
+      <div class="feature"><div class="ic">🪟</div><h3 data-en="Interface" data-ar="الواجهة">Interface</h3><p data-en="CustomTkinter" data-ar="CustomTkinter">CustomTkinter</p></div>
+      <div class="feature"><div class="ic">🤖</div><h3 data-en="AI Model" data-ar="مودل الذكاء الاصطناعي">AI Model</h3><p data-en="Hugging Face + fallback" data-ar="Hugging Face + بديل محلي">Hugging Face + fallback</p></div>
+      <div class="feature"><div class="ic">🌐</div><h3 data-en="Bilingual" data-ar="ثنائي اللغة">Bilingual</h3><p data-en="English ⇄ Arabic" data-ar="إنجليزي ⇄ عربي">English ⇄ Arabic</p></div>
+      <div class="feature"><div class="ic">📊</div><h3 data-en="Graphics" data-ar="الرسوم">Graphics</h3><p data-en="Embedded Matplotlib" data-ar="Matplotlib المدمج">Embedded Matplotlib</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- المودل AI -->
+<section>
+  <div class="card">
+    <h2 data-en="AI Chat Model" data-ar="مودل الذكاء الاصطناعي">AI Chat Model</h2>
+    <p data-en="Any unrecognized command is sent to an AI conversation model. The app calls the Hugging Face Inference API (DialoGPT-medium, free, no key) in a background thread, and falls back to a smart local reply if offline."
+       data-ar="أي أمر غير مفهوم يُرسل تلقائياً إلى مودل محادثة ذكاء اصطناعي. يستدعي التطبيق Hugging Face Inference API (DialoGPT-medium، مجاني بدون مفتاح) في خيط خلفي، ويعود لرد محلي ذكي عند الانقطاع.">Any unrecognized command is sent to an AI conversation model. The app calls the Hugging Face Inference API (DialoGPT-medium, free, no key) in a background thread, and falls back to a smart local reply if offline.</p>
+    <div class="code">
+<span class="c"># AI reply with Hugging Face + local fallback</span>
+<span class="k">def</span> ai_reply(prompt):
+    <span class="k">try</span>:
+        r = requests.post(HF_API, json={<span class="s">"inputs"</span>: prompt}, timeout=12)
+        <span class="k">if</span> r.status_code == 200:
+            ans = r.json()[0][<span class="s">"generated_text"</span>]
+            <span class="k">return</span> ans <span class="k">if</span> LANG==<span class="s">"en"</span> <span class="k">else</span> translate_text(ans,<span class="s">"ar"</span>)
+    <span class="k">except</span>:
+        <span class="k">pass</span>
+    <span class="k">return</span> f<span class="s">"I'm Zira, your smart assistant. You said: {prompt}"</span>
+    </div>
+  </div>
+</section>
+
+<!-- اللغة -->
+<section>
+  <div class="card">
+    <h2 data-en="Bilingual Support" data-ar="دعم اللغتين">Bilingual Support</h2>
+    <p data-en="A language toggle button switches the entire UI between English and Arabic instantly. Speech recognition uses en-US or ar-SA, and the TTS engine auto-selects an Arabic voice when replying in Arabic. Translation between the two languages uses LibreTranslate with a graceful fallback."
+       data-ar="زر تبديل اللغة يحوّل الواجهة بالكامل بين الإنجليزية والعربية فوراً. التعرف الصوتي يستخدم en-US أو ar-SA، ومحرك النطق يختار تلقائياً صوتاً عربياً عند الرد بالعربية. الترجمة بين اللغتين تعتمد LibreTranslate مع بديل احتياطي.">A language toggle button switches the entire UI between English and Arabic instantly. Speech recognition uses en-US or ar-SA, and the TTS engine auto-selects an Arabic voice when replying in Arabic. Translation between the two languages uses LibreTranslate with a graceful fallback.</p>
+    <div class="code">
+<span class="c"># Toggle language and refresh all labels</span>
+<span class="k">def</span> toggle_language():
+    LANG[<span class="s">"mode"</span>] = <span class="s">"ar"</span> <span class="k">if</span> LANG[<span class="s">"mode"</span>]==<span class="s">"en"</span> <span class="k">else</span> <span class="s">"en"</span>
+    refresh_labels()
     </div>
   </div>
 </section>
@@ -194,17 +238,17 @@
 <!-- سير العمل -->
 <section>
   <div class="card">
-    <h2>سير العمل (Pipeline)</h2>
+    <h2 data-en="Workflow Pipeline" data-ar="سير العمل">Workflow Pipeline</h2>
     <div class="flow">
-      <div class="step"><b>1. الاستماع</b>التقاط الصوت من الميكروفون</div>
+      <div class="step"><b data-en="1. Listen" data-ar="1. الاستماع">1. Listen</b><span data-en="Capture voice from mic" data-ar="التقاط الصوت من الميكروفون">Capture voice from mic</span></div>
       <span class="arrow">→</span>
-      <div class="step"><b>2. التعرف</b>تحويل الصوت إلى نص</div>
+      <div class="step"><b data-en="2. Recognize" data-ar="2. التعرف">2. Recognize</b><span data-en="Speech to text" data-ar="تحويل الصوت إلى نص">Speech to text</span></div>
       <span class="arrow">→</span>
-      <div class="step"><b>3. التحليل</b>مطابقة الأنماط Regex</div>
+      <div class="step"><b data-en="3. Analyze" data-ar="3. التحليل">3. Analyze</b><span data-en="Regex pattern match" data-ar="مطابقة الأنماط">Regex pattern match</span></div>
       <span class="arrow">→</span>
-      <div class="step"><b>4. التنفيذ</b>فتح تطبيق / أمر نظام</div>
+      <div class="step"><b data-en="4. Execute" data-ar="4. التنفيذ">4. Execute</b><span data-en="App / system command" data-ar="تطبيق / أمر نظام">App / system command</span></div>
       <span class="arrow">→</span>
-      <div class="step"><b>5. الرد</b>تحدث بصوت Zira</div>
+      <div class="step"><b data-en="5. AI / Reply" data-ar="5. الذكاء / الرد">5. AI / Reply</b><span data-en="Smart spoken answer" data-ar="رد صوتي ذكي">Smart spoken answer</span></div>
     </div>
   </div>
 </section>
@@ -212,61 +256,39 @@
 <!-- المعمارية -->
 <section>
   <div class="card">
-    <h2>المعمارية والوحدات</h2>
+    <h2 data-en="Architecture & Modules" data-ar="المعمارية والوحدات">Architecture & Modules</h2>
     <ul>
-      <li><b>speech_recognition</b> — الاستماع ومعالجة الضوضاء المحيطة.</li>
-      <li><b>pyttsx3</b> — محرك TTS محلي بدون إنترنت للرد.</li>
-      <li><b>CustomTkinter</b> — واجهة سماوية بأزرار ناعمة وشعار متوهج.</li>
-      <li><b>Matplotlib</b> — موجة صوتية حية ناعمة أثناء الرن.</li>
-      <li><b>threading</b> — حلقة استماع في خيط منفصل حتى لا تتجمد الواجهة.</li>
-      <li><b>subprocess / os / shutil</b> — تنفيذ أوامر النظام وإدارة الملفات.</li>
+      <li data-en="speech_recognition — listening & ambient noise handling" data-ar="speech_recognition — الاستماع ومعالجة الضوضاء المحيطة">speech_recognition — listening & ambient noise handling</li>
+      <li data-en="pyttsx3 — offline TTS engine with Zira & Arabic voices" data-ar="pyttsx3 — محرك TTS محلي بصوت زيرة والعربية">pyttsx3 — offline TTS engine with Zira & Arabic voices</li>
+      <li data-en="CustomTkinter — sky-themed UI with glow & fade transitions" data-ar="CustomTkinter — واجهة سماوية بتوهج وانتقالات سلسة">CustomTkinter — sky-themed UI with glow & fade transitions</li>
+      <li data-en="requests — Hugging Face AI API & LibreTranslate" data-ar="requests — واجهة Hugging Face والترجمة">requests — Hugging Face AI API & LibreTranslate</li>
+      <li data-en="Matplotlib — smooth live audio wave" data-ar="Matplotlib — موجة صوتية حية ناعمة">Matplotlib — smooth live audio wave</li>
+      <li data-en="threading — background listen loop (non-blocking UI)" data-ar="threading — حلقة استماع في خيط منفصل">threading — background listen loop (non-blocking UI)</li>
     </ul>
-    <div class="code">
-<span class="c"># مثال: حلقة الاستماع في خيط مستقل</span>
-<span class="k">def</span> listen_loop():
-    <span class="k">while</span> listening:
-        command = listen()
-        <span class="k">if</span> command:
-            execute_command(command)
-
-threading.Thread(target=listen_loop, daemon=<span class="k">True</span>).start()
-    </div>
-  </div>
-</section>
-
-<!-- المميزات -->
-<section>
-  <div class="card">
-    <h2>المميزات البصرية المضافة</h2>
-    <div class="grid">
-      <div class="feature"><div class="ic">🌊</div><h3>هوية سماوية</h3><p>لوحة ألوان متناسقة</p></div>
-      <div class="feature"><div class="ic">💠</div><h3>شعار متوهج</h3><p>Glow Orb ناعم</p></div>
-      <div class="feature"><div class="ic">〰️</div><h3>موجة صوتية</h3><p>رسم حي سلس</p></div>
-      <div class="feature"><div class="ic">🎬</div><h3>انتقال سلس</h3><p>Fade بين الشاشات</p></div>
-    </div>
   </div>
 </section>
 
 <!-- الأوامر -->
 <section>
   <div class="card">
-    <h2>أنماط الأوامر المدعومة</h2>
+    <h2 data-en="Supported Commands" data-ar="الأوامر المدعومة">Supported Commands</h2>
     <ul>
-      <li>فتح التطبيقات: المتصفح، Notepad، Telegram، VS Code، AnyDesk، VNC…</li>
-      <li>التحكم بالنظام: إعادة التشغيل، الإغلاق، فتح الأقسام.</li>
-      <li>إدارة سطح المكتب: إنشاء / حذف ملفات ومجلدات.</li>
-      <li>الوسائط والويب: YouTube، ChatGPT، Gemini، Google Search…</li>
-      <li>المحادثة: الاسم، الحالة، الوقت، الشكر.</li>
+      <li data-en="Open apps: browser, Notepad, Telegram, VS Code, AnyDesk, VNC…" data-ar="فتح التطبيقات: المتصفح، Notepad، Telegram، VS Code، AnyDesk، VNC…">Open apps: browser, Notepad, Telegram, VS Code, AnyDesk, VNC…</li>
+      <li data-en="System control: restart, shutdown, open partitions" data-ar="التحكم بالنظام: إعادة التشغيل، الإغلاق، فتح الأقسام">System control: restart, shutdown, open partitions</li>
+      <li data-en="Desktop management: create / delete files & folders" data-ar="إدارة سطح المكتب: إنشاء / حذف ملفات ومجلدات">Desktop management: create / delete files & folders</li>
+      <li data-en="Media & web: YouTube, ChatGPT, Gemini, Google Search…" data-ar="الوسائط والويب: YouTube، ChatGPT، Gemini، بحث Google…">Media & web: YouTube, ChatGPT, Gemini, Google Search…</li>
+      <li data-en="Chat & AI: ask / chat / اسأل / دردش — powered by AI model" data-ar="الدردشة والذكاء: ask / chat / اسأل / دردش — مدعوم بالمودل">Chat & AI: ask / chat / اسأل / دردش — powered by AI model</li>
     </ul>
   </div>
 </section>
 
 <footer>
- • Zira Assistant • التوثيق التقني v1.0
+  <span data-en=" • Zira Assistant • Docs v2.0"
+        data-ar=" • زيرة • التوثيقv2.0"> Zira Assistant • Docs v2.0</span>
 </footer>
 
 <script>
-/* ====== توليد "لقطة الشاشة" كـ SVG ثم تحويلها Base64 داخل الصفحة ====== */
+/* ====== توليد لقطة الشاشة كـ SVG ثم Base64 داخل الصفحة ====== */
 function buildShot(title, sub, withWave){
   const wave = withWave ? `
     <path d="M30,150 q20,-40 40,0 t40,0 t40,0 t40,0 t40,0 t40,0 t40,0"
@@ -281,14 +303,11 @@ function buildShot(title, sub, withWave){
   <svg xmlns="http://www.w3.org/2000/svg" width="520" height="360" viewBox="0 0 520 360">
     <defs>
       <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-        <stop offset="0" stop-color="#0a2a3a"/>
-        <stop offset="1" stop-color="#03121b"/>
+        <stop offset="0" stop-color="#0a2a3a"/><stop offset="1" stop-color="#03121b"/>
       </linearGradient>
       <radialGradient id="orb" cx="35%" cy="30%" r="70%">
-        <stop offset="0" stop-color="#7fe3ff"/>
-        <stop offset="45%" stop-color="#00b7eb"/>
-        <stop offset="75%" stop-color="#0090c5"/>
-        <stop offset="78%" stop-color="#03121b" stop-opacity="0"/>
+        <stop offset="0" stop-color="#7fe3ff"/><stop offset="45%" stop-color="#00b7eb"/>
+        <stop offset="75%" stop-color="#0090c5"/><stop offset="78%" stop-color="#03121b" stop-opacity="0"/>
       </radialGradient>
     </defs>
     <rect width="520" height="360" rx="26" fill="url(#bg)" stroke="#00b7eb" stroke-opacity="0.5" stroke-width="2"/>
@@ -299,12 +318,27 @@ function buildShot(title, sub, withWave){
     <text x="260" y="240" text-anchor="middle" fill="#d6f4ff" font-family="Arial" font-size="15" opacity="0.8">${sub}</text>
     ${wave}
     <rect x="150" y="270" width="220" height="40" rx="20" fill="#00b7eb"/>
-    <text x="260" y="295" text-anchor="middle" fill="#04141d" font-family="Arial" font-size="15" font-weight="bold">🎙 استماع</text>
+    <text x="260" y="295" text-anchor="middle" fill="#04141d" font-family="Arial" font-size="15" font-weight="bold">🎙 Listen</text>
   </svg>`;
   return "data:image/svg+xml;base64," + btoa(unescape(encodeURIComponent(svg)));
 }
 document.getElementById("shot1").src = buildShot("ZIRA","Voice Assistant", false);
-document.getElementById("shot2").src = buildShot("LISTENING","● الموجة الصوتية الحية", true);
+document.getElementById("shot2").src = buildShot("LISTENING","Live audio wave", true);
+
+/* ====== تبديل اللغة EN ⇄ AR ====== */
+let currentLang = "en";
+function toggleLang(){
+  currentLang = currentLang === "en" ? "ar" : "en";
+  const ar = currentLang === "ar";
+  document.body.classList.toggle("ar", ar);
+  document.documentElement.lang = ar ? "ar" : "en";
+  document.documentElement.dir = ar ? "rtl" : "ltr";
+  document.getElementById("langBtn").textContent = ar ? "🌐 English" : "🌐 العربية";
+  document.title = ar ? "زيرة — التوثيق التقني" : "Zira Assistant — Technical Docs";
+  document.querySelectorAll("[data-en]").forEach(el=>{
+    el.textContent = ar ? el.getAttribute("data-ar") : el.getAttribute("data-en");
+  });
+}
 </script>
 </body>
 </html>
